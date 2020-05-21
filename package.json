@@ -1,0 +1,14 @@
+{
+  "name": "mt-webpack-demo",
+  "version": "1.0.0",
+  "description": "我的webpack的练手项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mt-webpack-demo"
+  ],
+  "author": "mt",
+  "license": "ISC"
+}
