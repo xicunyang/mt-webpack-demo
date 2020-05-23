@@ -1,5 +1,7 @@
 const { path, distPath, srcPath } = require('./paths')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 
 module.exports = {
     // 入口js文件
@@ -9,14 +11,21 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@': srcPath
-        }
+            '@': srcPath,
+            'vue$': 'vue/dist/vue.esm.js'
+        },
+        extensions: ['*','.vue','.js','.jsx','.json']
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 loader: ['babel-loader'],
+                include: srcPath
+            },
+            {
+                test: /\.vue$/,
+                loader: ['vue-loader'],
                 include: srcPath
             },
         ]
@@ -31,6 +40,7 @@ module.exports = {
             template: path.join(srcPath, 'index2.html'),
             filename: "index2.html",
             chunks: ['index2']
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 }

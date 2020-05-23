@@ -14,7 +14,7 @@ module.exports = smart(webpackCommom, {
     mode: 'production',
     output: {
         path: distPath,
-        filename: '[name]-[contentHash:16].js'
+        filename: '[name]-[contentHash:16].bundle.js'
     },
     module: {
         rules: [
@@ -44,7 +44,7 @@ module.exports = smart(webpackCommom, {
     plugins:[
         new CleanWebpackPlugin(),
         new miniCssExtractPlugin({
-            filename: '[name]-[contentHash:16].css',
+            filename: '[name]-[contentHash:16].bundle.css',
         })
     ],
     optimization:{

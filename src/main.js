@@ -33,3 +33,19 @@ import lodash from 'lodash'
 import { commonJs } from './common/common'
 
 console.log(commonJs())
+
+// 测试懒加载
+setTimeout(()=>{
+    import('./js/lanjiazai').then(res=>{
+        console.log('懒加载：',res);
+    })
+},1500)
+
+// 测试vue
+import Vue from 'vue'
+import App from './vue/App'
+
+new Vue({
+    el: '#container',
+    render: h=>h(App)
+})

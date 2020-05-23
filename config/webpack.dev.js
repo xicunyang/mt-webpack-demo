@@ -4,6 +4,7 @@ const webpackCommom = require('./webpack.common')
 
 module.exports = smart(webpackCommom, {
     mode: 'development',
+    devtool: 'inline-source-map',
     module:{
         rules: [
             {
